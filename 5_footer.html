@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .footer {
+      height: 100vh;
+      width: 100vw;
+      width: 100%;
+      background-color: lightgrey;
+      text-align: center;
+      line-height: 40px;
+    }
+    #footimg {
+      height: 200px;
+      border-radius: 25px;
+      border-top-left-radius: 52px;
+      position: absolute;
+      margin-top: 20vh;
+      left: calc(50% - 100px);
+    }
+    #line {
+      border: solid black 1px;
+      width: 100%;
+      position: relative;
+      top: 400px;
+    }
+    .copy {
+      position: relative;
+      bottom: -50vh;
+      padding-top: 5px;
+      height: 150px;
+      border: 1px solid black;
+      width: 100%;
+      text-align: center;
+      background-color: black;
+      color: white;
+    }
+    .footer .links {
+      position: relative;
+      bottom: -50vh;
+      list-style: disc;
+      padding: 20px;
+      display: inline-block;
+    }
+    .copy .images {
+      height: 50px;
+    }
+    ul.img-links {
+      margin: 16px 0;
+      padding: 0;
+    }
+    ul.img-links > li {
+      display: inline-block;
+    }
+    ul.img-links > li > a {
+      padding: 0 20px;
+    }
+  </style>
+  <body>
+    <section class="footer" id="footer">
+      <img id="footimg" src="./images/news.png" alt="News Logo" />
+      <div id="line"></div>
+      <ul class="links">
+        <strong>
+          Social Media
+        </strong>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Twitter</a></li>
+        <li><a href="">Youtube</a></li>
+        <li><a href="">LinkedIn</a></li>
+      </ul>
+      <ul class="links">
+        <strong>
+          Pages
+        </strong>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#carousel">Carousel</a></li>
+      </ul>
+      <div class="copy">
+        <ul class="img-links">
+          <li>
+            <a href=""
+              ><img class="images" src="./images/instagram.png" alt=""
+            /></a>
+            <a href=""
+              ><img class="images" src="./images/youtube.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              ><img class="images" src="./images/twitter_blue.png" alt=""
+            /></a>
+            <a href=""
+              ><img class="images" src="./images/facebook.png" alt=""
+            /></a>
+          </li>
+        </ul>
+        <div>Nick Bisignano &copy; 2020</div>
+      </div>
+    </section>
+  </body>
+</html>

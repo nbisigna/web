@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    .carousel-container {
+      height: 400px;
+      position: relative;
+    }
+    #right {
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 60px 0;
+      border-left: 60px solid white;
+      right: 25px;
+      top: 140px;
+      cursor: pointer;
+    }
+    #left {
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 60px 0;
+      border-right: 60px solid white;
+      left: 25px;
+      top: 140px;
+      cursor: pointer;
+    }
+    #borderR {
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 68px 0;
+      border-left: 68px solid black;
+      right: 20px;
+      top: 132px;
+      cursor: pointer;
+    }
+    #borderL {
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 68px 0;
+      border-right: 68px solid black;
+      left: 20px;
+      top: 132px;
+      cursor: pointer;
+    }
+    .carousel {
+      height: 400px;
+      width: 100%;
+      text-align: center;
+      border: 2px solid black;
+      background-image: url('./images/eclipse.jpg');
+      background-repeat: none;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      opacity: 1;
+    }
+    .carousel2 {
+      height: 400px;
+      width: 100%;
+      text-align: center;
+      border: 2px solid black;
+      background-image: url('./images/eclipse.jpg');
+      background-repeat: none;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      opacity: 0;
+    }
+  </style>
+  <body>
+    <section class="carousel-container">
+      <div class="carousel" id="carousel"></div>
+      <div class="carousel2" id="carousel2"></div>
+      <div id="borderL"></div>
+      <div id="borderR"></div>
+      <div id="right"></div>
+      <div id="left"></div>
+    </section>
+    <script>
+      var images = [
+        './images/eclipse.jpg',
+        './images/mountain.jpg',
+        './images/city.jpg',
+        './images/reflection.jpg',
+        './images/space.jpg',
+      ];
+      var i = 0;
+      var img = document.getElementById('carousel');
+      var img2 = document.getElementById('carousel2');
+      function changeRight() {
+        i = (i + 1) % images.length;
+        if (i & 1) {
+          img2.style.backgroundImage = 'url(' + images[i] + ')';
+          img2.style.opacity = 0;
+          img.style.opacity = 1;
+          fadeOut(img);
+          fadeIn(img2);
+
+          img.style.left = 0;
+          moveOut(img);
+          img2.style.left = document.body.clientWidth * -1 + 'px';
+          moveIn(img2);
+        } else {
+          img.style.backgroundImage = 'url(' + images[i] + ')';
+          img.style.opacity = 0;
+          img2.style.opacity = 1;
+          fadeOut(img2);
+          fadeIn(img);
+
+          img2.style.left = 0;
+          moveOut(img2);
+          img.style.left = document.body.clientWidth * -1 + 'px';
+          moveIn(img);
+        }
+      }
+      function changeLeft() {
+        i = i - 1 < 0 ? images.length - 1 : i - 1;
+        if (i & 1) {
+          img2.style.backgroundImage = 'url(' + images[i] + ')';
+          img2.style.opacity = 0;
+          img.style.opacity = 1;
+          fadeOut(img);
+          fadeIn(img2);
+
+          img.style.left = 0;
+          moveOutLeft(img);
+          img2.style.left = document.body.clientWidth + 'px';
+          moveInLeft(img2);
+        } else {
+          img.style.backgroundImage = 'url(' + images[i] + ')';
+          img.style.opacity = 0;
+          img2.style.opacity = 1;
+          fadeOut(img2);
+          fadeIn(img);
+
+          img2.style.left = 0;
+          moveOutLeft(img2);
+          img.style.left = document.body.clientWidth + 'px';
+          moveInLeft(img);
+        }
+      }
+      var interval = setInterval(changeRight, 5000);
+
+      var left = document.getElementById('left');
+      left.addEventListener('click', function leftClick() {
+        left.removeEventListener('click', leftClick);
+        clearTimeout(timeout);
+        clearInterval(interval);
+        changeLeft();
+        setTimeout(function () {
+          interval = setInterval(changeRight, 5000);
+          left.addEventListener('click', leftClick);
+        }, 1000);
+      });
+
+      var right = document.getElementById('right');
+      right.addEventListener('click', function rightClick() {
+        right.removeEventListener('click', rightClick);
+        clearTimeout(timeout);
+        clearInterval(interval);
+        changeRight();
+        setTimeout(function () {
+          interval = setInterval(changeRight, 5000);
+          right.addEventListener('click', rightClick);
+        }, 1000);
+      });
+
+      var timeout;
+
+      function moveOut(el) {
+        if (el.offsetLeft > document.body.clientWidth) {
+          el.style.left = 0;
+          return;
+        }
+        el.style.left = el.offsetLeft + 12 + 'px';
+        timeout = setTimeout(function () {
+          moveOut(el);
+        }, 1);
+      }
+      function moveIn(el) {
+        if (el.offsetLeft >= 0) {
+          el.style.left = 0;
+          return;
+        }
+        el.style.left = el.offsetLeft + 12 + 'px';
+        timeout = setTimeout(function () {
+          moveIn(el);
+        }, 1);
+      }
+
+      function moveOutLeft(el) {
+        if (el.offsetLeft <= -2 * document.body.clientWidth) {
+          el.style.left = -2 * document.body.clientWidth;
+          return;
+        }
+        el.style.left = el.offsetLeft - 12 + 'px';
+        timeout = setTimeout(function () {
+          moveOutLeft(el);
+        }, 1);
+      }
+      function moveInLeft(el) {
+        if (el.offsetLeft <= 0) {
+          el.style.left = 0;
+          return;
+        }
+        el.style.left = el.offsetLeft - 12 + 'px';
+        timeout = setTimeout(function () {
+          moveInLeft(el);
+        }, 1);
+      }
+
+      function fadeIn(el) {
+        if (el.style.opacity == 1) return;
+        el.style.opacity = Number(el.style.opacity) + 0.01;
+        timeout = setTimeout(function () {
+          fadeIn(el);
+        }, 10);
+      }
+      function fadeOut(el) {
+        el.style.opacity = el.style.opacity || 1;
+        if (el.style.opacity == 0) return;
+        el.style.opacity = Number(el.style.opacity) - 0.01;
+        timeout = setTimeout(function () {
+          fadeOut(el);
+        }, 10);
+      }
+    </script>
+  </body>
+</html>

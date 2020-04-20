@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .navbar {
+        z-index: 100;
+        position: fixed;
+        width: calc(100% - 20px);
+        background-color: whitesmoke;
+        padding: 0 20px 0 0;
+        text-align: center;
+      }
+      .navbar li {
+        display: inline-block;
+        margin: 0;
+      }
+      .navbar ul {
+        display: inline;
+        padding: 0;
+        margin: 0;
+      }
+      .navbar a {
+        display: block;
+        padding: 10px 5px;
+        font-size: 24px;
+        text-decoration: none;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .navbar a:hover {
+        background-color: darkgray;
+      }
+      #rightNav {
+        float: right;
+      }
+      #leftNav {
+        float: left;
+      }
+      #logo {
+        vertical-align: bottom;
+        padding: 10px;
+        height: 28px;
+      }
+      #icon {
+        display: none;
+      }
+      .bar {
+        width: 50px;
+        background-color: black;
+        height: 6px;
+        margin: 8px 0;
+      }
+      .navbar .img {
+        height: 24px;
+        padding: 0 8px;
+        vertical-align: middle;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: whitesmoke;
+        min-width: 130px;
+        width: 130px;
+        z-index: 1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      @media only screen and (max-width: 600px) {
+        .navbar li,
+        .navbar ul {
+          display: block;
+        }
+        .navbar a,
+        .dropdown-content {
+          width: 100vw;
+          display: none;
+        }
+        .navbar nav {
+          width: 100%;
+          padding: 0;
+        }
+        #logo {
+          height: 50px;
+        }
+        #icon {
+          display: block;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          width: 52px;
+          pointer-events: all;
+        }
+
+        #rightNav,
+        #leftNav {
+          float: none;
+        }
+        .navbar.responsive a:not(.icon) {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar" class="navbar">
+      <ul id="leftNav">
+        <img src="./images/news.png" alt="A Newspaper Logo" id="logo" />
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li class="dropdown">
+          <a href="">Dropdown</a>
+          <div class="dropdown-content">
+            <a href="">Dropdown Content</a>
+            <a href="">Dropdown Content 2</a>
+          </div>
+        </li>
+      </ul>
+      <ul id="rightNav">
+        <li>
+          <a href=""
+            ><img class="img" src="./images/instagram.png" alt="Instagram"
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img class="img" src="./images/youtube.png" alt="Youtube"
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img class="img" src="./images/twitter.png" alt="Twitter"
+          /></a>
+        </li>
+      </ul>
+      <a
+        href="javascript:void(0);"
+        id="icon"
+        class="icon"
+        onclick="toggleNav()"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </a>
+    </nav>
+    <script>
+      function toggleNav() {
+        var x = document.getElementById('navbar');
+        if (x.className === 'navbar') {
+          x.className += ' responsive';
+        } else {
+          x.className = 'navbar';
+        }
+      }
+      document.addEventListener('click', function (e) {
+        var x = document.getElementById('navbar');
+        if (
+          !e.target.classList.contains('bar') &&
+          !e.target.classList.contains('icon')
+        ) {
+          x.className = 'navbar';
+        }
+      });
+    </script>
+  </body>
+</html>

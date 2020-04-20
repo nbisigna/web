@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #about {
+        min-height: 100vh;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 'menu main main main';
+        grid-gap: 10px;
+        box-sizing: border-box;
+        background-image: url('./images/palm_trees.jpeg');
+        background-repeat: none;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .grid-item {
+        border: 2px solid black;
+        text-align: center;
+        padding: 20px;
+      }
+      #menu {
+        grid-area: menu;
+        background-color: lightblue;
+      }
+      #main {
+        grid-area: main;
+        background-color: lightcoral;
+      }
+      .grid-item > ul {
+        list-style: none;
+      }
+      .grid-item .img {
+        height: 50px;
+        vertical-align: middle;
+        padding: 0 20px;
+      }
+      .grid-item li > a {
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+
+      #image {
+        height: 200px;
+        opacity: 1;
+        float: left;
+        border-radius: 100%;
+        border: 5px solid black;
+        margin: 10px 25px;
+      }
+      #main p {
+        padding: 16px;
+        text-indent: 50px;
+      }
+      @media only screen and (max-width: 600px) {
+        #menu {
+          grid-area: 1/ 1 / 1 / span2;
+        }
+        #main {
+          grid-area: 4 / 1 / 2 / span2;
+        }
+      }
+
+      @media only screen and (max-width: 666px) {
+        #image {
+          float: none;
+          margin: 0;
+          height: 170px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="about">
+      <div class="grid-item" id="menu">
+        <ul>
+          <h1>Social Media</h1>
+          <li>
+            <a href=""
+              >Instagram <img class="img" src="./images/instagram.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              >Twitter<img class="img" src="./images/twitter.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              >YouTube<img class="img" src="./images/youtube.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              >Facebook<img class="img" src="./images/facebook.png" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-item" id="main">
+        <h1>About Us</h1>
+        <img id="image" src="./images/nick.jpeg" alt="Picture of Nick" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam arcu
+          arcu, cursus quis posuere nec, bibendum et ligula. Praesent
+          sollicitudin mollis dui eget commodo. Nullam eget nulla sed felis
+          ullamcorper tincidunt. Donec molestie convallis ante, quis venenatis
+          arcu posuere vel. Morbi vulputate, sapien ut ultricies blandit, lacus
+          magna efficitur dolor, sit amet consectetur urna augue et tellus.
+          Donec elementum metus eu accumsan commodo. Vivamus sed massa quis
+          ipsum hendrerit semper. Etiam vel neque nec mauris malesuada interdum.
+          Phasellus vel ante vitae mi efficitur euismod. Sed nibh dolor, aliquam
+          vitae lacus ac, euismod ornare nibh. Pellentesque molestie ac tortor
+          nec porta.
+        </p>
+        <p>
+          Nunc imperdiet, nibh quis eleifend sagittis, urna ante maximus dui,
+          efficitur vulputate ipsum augue vel quam. Aliquam tortor ante, pretium
+          nec dui et, scelerisque condimentum eros. Morbi lobortis dignissim
+          semper. Quisque elementum non leo ac placerat. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Praesent vulputate dolor a elit aliquam rhoncus. Integer
+          odio augue, ultrices id dapibus in, consectetur ac neque. Vivamus vel
+          molestie mauris.
+        </p>
+        <p>
+          Nullam in nibh fermentum, interdum augue ut, aliquam leo. Fusce cursus
+          mi dolor, non placerat nulla luctus ac. Morbi fermentum consectetur
+          elementum. Etiam vitae sem at tellus pretium ultrices ut bibendum
+          erat. Duis feugiat mattis augue, at finibus sapien sodales quis.
+          Vivamus tristique odio a nisi aliquam, id convallis neque consequat.
+          Suspendisse nec metus id mauris convallis fermentum. Morbi dapibus
+          volutpat fringilla. In hac habitasse platea dictumst. Pellentesque
+          dictum dapibus mi, et volutpat ipsum finibus vitae.
+        </p>
+        <p>
+          Proin felis metus, tempus vel nunc id, condimentum pellentesque dui.
+          Praesent tincidunt sapien a scelerisque faucibus. Orci varius natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut
+          facilisis eget erat sit amet elementum. Sed fringilla venenatis
+          tempor. Vestibulum nec tristique nulla. Integer nisi nulla, ultricies
+          et nulla in, consectetur dignissim mi. Orci varius natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </p>
+        <p>
+          Sed efficitur, est eu varius sagittis, ante sem porta mauris, eget
+          pharetra velit sapien a libero. Phasellus quis arcu dictum, fermentum
+          eros sed, tincidunt metus. Maecenas hendrerit lorem eget nisi
+          consequat feugiat. Ut sed tellus iaculis, pretium lacus in, pulvinar
+          velit. Maecenas maximus nisi sollicitudin tellus facilisis efficitur.
+          Pellentesque sit amet elementum magna, quis bibendum purus. Maecenas
+          at mauris ut lacus molestie aliquet. Aliquam semper laoreet feugiat.
+          Orci varius natoque penatibus et magnis dis parturient montes,
+          nascetur ridiculus mus. Donec suscipit tincidunt risus eget
+          pellentesque. Proin lobortis lorem quam, eget iaculis lacus aliquam
+          sed. In hac habitasse platea dictumst.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

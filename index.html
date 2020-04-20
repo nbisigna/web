@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Nick, website, website built from scratch" />
+    <meta
+      name="description"
+      content="A basic website built from scratch using custom components."
+    />
+    <meta robots="index, follow" />
+    <meta name="author" content="Nick Bisignano" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Website</title>
+  </head>
+  <link rel="stylesheet" href="styles.css" />
+  <body>
+    <nav id="navbar" class="navbar">
+      <ul id="leftNav">
+        <img src="./images/news.png" alt="A Newspaper Logo" id="logo" />
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#">Dropdown</a>
+          <div class="dropdown-content">
+            <a href="#carousel">Carousel</a>
+            <a href="#footer">Footer</a>
+          </div>
+        </li>
+      </ul>
+      <ul id="rightNav">
+        <li>
+          <a href=""
+            ><img class="img" src="./images/instagram.png" alt="Instagram"
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img class="img" src="./images/youtube.png" alt="Youtube"
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img class="img" src="./images/twitter.png" alt="Twitter"
+          /></a>
+        </li>
+      </ul>
+      <a
+        href="javascript:void(0);"
+        class="icon"
+        id="icon"
+        onclick="toggleNav()"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </a>
+    </nav>
+
+    <section id="home">
+      <div id="intro" class="container">
+        <h1>Welcome.</h1>
+        <p>This is our website. Please feel free to take a look around.</p>
+      </div>
+    </section>
+
+    <section class="carousel-container">
+      <div class="carousel" id="carousel"></div>
+      <div class="carousel2" id="carousel2"></div>
+      <div id="borderL"></div>
+      <div id="borderR"></div>
+      <div id="right"></div>
+      <div id="left"></div>
+    </section>
+
+    <div id="about">
+      <div class="grid-item" id="menu">
+        <ul>
+          <h1>Social Media</h1>
+          <li>
+            <a href=""
+              >Instagram <img class="img" src="./images/instagram.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              >Twitter<img class="img" src="./images/twitter.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              >YouTube<img class="img" src="./images/youtube.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              >Facebook<img class="img" src="./images/facebook.png" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-item" id="main">
+        <h1>About Us</h1>
+        <img id="image" src="./images/nick.jpeg" alt="Picture of Nick" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam arcu
+          arcu, cursus quis posuere nec, bibendum et ligula. Praesent
+          sollicitudin mollis dui eget commodo. Nullam eget nulla sed felis
+          ullamcorper tincidunt. Donec molestie convallis ante, quis venenatis
+          arcu posuere vel. Morbi vulputate, sapien ut ultricies blandit, lacus
+          magna efficitur dolor, sit amet consectetur urna augue et tellus.
+          Donec elementum metus eu accumsan commodo. Vivamus sed massa quis
+          ipsum hendrerit semper. Etiam vel neque nec mauris malesuada interdum.
+          Phasellus vel ante vitae mi efficitur euismod. Sed nibh dolor, aliquam
+          vitae lacus ac, euismod ornare nibh. Pellentesque molestie ac tortor
+          nec porta.
+        </p>
+        <p>
+          Nunc imperdiet, nibh quis eleifend sagittis, urna ante maximus dui,
+          efficitur vulputate ipsum augue vel quam. Aliquam tortor ante, pretium
+          nec dui et, scelerisque condimentum eros. Morbi lobortis dignissim
+          semper. Quisque elementum non leo ac placerat. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Praesent vulputate dolor a elit aliquam rhoncus. Integer
+          odio augue, ultrices id dapibus in, consectetur ac neque. Vivamus vel
+          molestie mauris.
+        </p>
+        <p>
+          Nullam in nibh fermentum, interdum augue ut, aliquam leo. Fusce cursus
+          mi dolor, non placerat nulla luctus ac. Morbi fermentum consectetur
+          elementum. Etiam vitae sem at tellus pretium ultrices ut bibendum
+          erat. Duis feugiat mattis augue, at finibus sapien sodales quis.
+          Vivamus tristique odio a nisi aliquam, id convallis neque consequat.
+          Suspendisse nec metus id mauris convallis fermentum. Morbi dapibus
+          volutpat fringilla. In hac habitasse platea dictumst. Pellentesque
+          dictum dapibus mi, et volutpat ipsum finibus vitae.
+        </p>
+        <p>
+          Proin felis metus, tempus vel nunc id, condimentum pellentesque dui.
+          Praesent tincidunt sapien a scelerisque faucibus. Orci varius natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut
+          facilisis eget erat sit amet elementum. Sed fringilla venenatis
+          tempor. Vestibulum nec tristique nulla. Integer nisi nulla, ultricies
+          et nulla in, consectetur dignissim mi. Orci varius natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </p>
+        <p>
+          Sed efficitur, est eu varius sagittis, ante sem porta mauris, eget
+          pharetra velit sapien a libero. Phasellus quis arcu dictum, fermentum
+          eros sed, tincidunt metus. Maecenas hendrerit lorem eget nisi
+          consequat feugiat. Ut sed tellus iaculis, pretium lacus in, pulvinar
+          velit. Maecenas maximus nisi sollicitudin tellus facilisis efficitur.
+          Pellentesque sit amet elementum magna, quis bibendum purus. Maecenas
+          at mauris ut lacus molestie aliquet. Aliquam semper laoreet feugiat.
+          Orci varius natoque penatibus et magnis dis parturient montes,
+          nascetur ridiculus mus. Donec suscipit tincidunt risus eget
+          pellentesque. Proin lobortis lorem quam, eget iaculis lacus aliquam
+          sed. In hac habitasse platea dictumst.
+        </p>
+      </div>
+    </div>
+    <section id="contact">
+      <h1>Contact Us</h1>
+      <form
+        class="form"
+        action="mailto:nicholas.bisignano@gmail.com?subject=Testing out form"
+      >
+        <label for="subject">Subject</label>
+        <input class="form-input" type="text" name="subject" />
+        <label for="body">Body</label>
+        <textarea class="form-input" name="body" cols="30" rows="10"></textarea>
+        <button id="submit" type="submit">Submit</button>
+      </form>
+    </section>
+    <section class="footer" id="footer">
+      <img id="footimg" src="./images/news.png" alt="News Logo" />
+      <div id="line"></div>
+      <ul class="links">
+        <strong>
+          Social Media
+        </strong>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Twitter</a></li>
+        <li><a href="">Youtube</a></li>
+        <li><a href="">LinkedIn</a></li>
+      </ul>
+      <ul class="links">
+        <strong>
+          Pages
+        </strong>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#carousel">Carousel</a></li>
+      </ul>
+      <div class="copy">
+        <ul class="img-links">
+          <li>
+            <a href=""
+              ><img class="images" src="./images/instagram.png" alt=""
+            /></a>
+            <a href=""
+              ><img class="images" src="./images/youtube.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              ><img class="images" src="./images/twitter_blue.png" alt=""
+            /></a>
+            <a href=""
+              ><img class="images" src="./images/facebook.png" alt=""
+            /></a>
+          </li>
+        </ul>
+        <div>Nick Bisignano &copy; 2020</div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
