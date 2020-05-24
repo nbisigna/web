@@ -18,23 +18,10 @@
       text-align: center;
       line-height: 40px;
     }
-    #footimg {
-      height: 200px;
-      border-radius: 25px;
-      border-top-left-radius: 52px;
-      position: absolute;
-      margin-top: 20vh;
-      left: calc(50% - 100px);
-    }
-    #line {
-      border: solid black 1px;
-      width: 100%;
+
+    .footer .container {
       position: relative;
-      top: 400px;
-    }
-    .copy {
-      position: relative;
-      bottom: -50vh;
+      bottom: calc(-100vh + 150px);
       padding-top: 5px;
       height: 150px;
       border: 1px solid black;
@@ -50,7 +37,7 @@
       padding: 20px;
       display: inline-block;
     }
-    .copy .images {
+    .container .images {
       height: 50px;
     }
     ul.img-links {
@@ -66,27 +53,7 @@
   </style>
   <body>
     <section class="footer" id="footer">
-      <img id="footimg" src="./images/news.png" alt="News Logo" />
-      <div id="line"></div>
-      <ul class="links">
-        <strong>
-          Social Media
-        </strong>
-        <li><a href="">Instagram</a></li>
-        <li><a href="">Twitter</a></li>
-        <li><a href="">Youtube</a></li>
-        <li><a href="">LinkedIn</a></li>
-      </ul>
-      <ul class="links">
-        <strong>
-          Pages
-        </strong>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#carousel">Carousel</a></li>
-      </ul>
-      <div class="copy">
+      <div class="container">
         <ul class="img-links">
           <li>
             <a href=""

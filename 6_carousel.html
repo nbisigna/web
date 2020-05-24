@@ -13,6 +13,7 @@
       height: 400px;
       position: relative;
     }
+
     #right {
       position: absolute;
       border-color: transparent;
@@ -76,6 +77,39 @@
       background-position: center;
       position: absolute;
       opacity: 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .carousel,
+      .carousel2,
+      .carousel-container {
+        height: 200px;
+      }
+
+      #right {
+        border-width: 30px 0;
+        border-left: 30px solid white;
+        right: 25px;
+        top: 70px;
+      }
+      #left {
+        border-width: 30px 0;
+        border-right: 30px solid white;
+        left: 25px;
+        top: 70px;
+      }
+      #borderR {
+        border-width: 34px 0;
+        border-left: 34px solid black;
+        right: 20px;
+        top: 66px;
+      }
+      #borderL {
+        border-width: 34px 0;
+        border-right: 34px solid black;
+        left: 20px;
+        top: 66px;
+      }
     }
   </style>
   <body>

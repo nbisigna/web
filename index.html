@@ -15,21 +15,15 @@
   </head>
   <link rel="stylesheet" href="styles.css" />
   <body>
-    <nav id="navbar" class="navbar">
-      <ul id="leftNav">
-        <img src="./images/news.png" alt="A Newspaper Logo" id="logo" />
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="dropdown">
-          <a href="#">Dropdown</a>
-          <div class="dropdown-content">
-            <a href="#carousel">Carousel</a>
-            <a href="#footer">Footer</a>
-          </div>
-        </li>
+    <div class="navbar" id="navbar">
+      <img id="logo" src="./images/news.png" />
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
       </ul>
-      <ul id="rightNav">
+      <div id="title" href="#">My App</div>
+      <ul style="float: right;">
         <li>
           <a href=""
             ><img class="img" src="./images/instagram.png" alt="Instagram"
@@ -42,21 +36,21 @@
         </li>
         <li>
           <a href=""
-            ><img class="img" src="./images/twitter.png" alt="Twitter"
+            ><img class="img" src="./images/twitter_blue.png" alt="Twitter"
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img class="img" src="./images/facebook.png" alt="Facebook"
           /></a>
         </li>
       </ul>
-      <a
-        href="javascript:void(0);"
-        class="icon"
-        id="icon"
-        onclick="toggleNav()"
-      >
+      <a href="javascript:void(0);" id="icon" onclick="toggleNav()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </a>
-    </nav>
+    </div>
 
     <section id="home">
       <div id="intro" class="container">
@@ -166,35 +160,15 @@
         class="form"
         action="mailto:nicholas.bisignano@gmail.com?subject=Testing out form"
       >
-        <label for="subject">Subject</label>
+        <label>Subject</label>
         <input class="form-input" type="text" name="subject" />
-        <label for="body">Body</label>
+        <label>Body</label>
         <textarea class="form-input" name="body" cols="30" rows="10"></textarea>
         <button id="submit" type="submit">Submit</button>
       </form>
     </section>
     <section class="footer" id="footer">
-      <img id="footimg" src="./images/news.png" alt="News Logo" />
-      <div id="line"></div>
-      <ul class="links">
-        <strong>
-          Social Media
-        </strong>
-        <li><a href="">Instagram</a></li>
-        <li><a href="">Twitter</a></li>
-        <li><a href="">Youtube</a></li>
-        <li><a href="">LinkedIn</a></li>
-      </ul>
-      <ul class="links">
-        <strong>
-          Pages
-        </strong>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#carousel">Carousel</a></li>
-      </ul>
-      <div class="copy">
+      <div class="container">
         <ul class="img-links">
           <li>
             <a href=""

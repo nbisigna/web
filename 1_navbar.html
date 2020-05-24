@@ -7,123 +7,108 @@
     <style>
       body {
         margin: 0;
+        height: 200vh;
       }
       .navbar {
-        z-index: 100;
+        width: 100%;
         position: fixed;
-        width: calc(100% - 20px);
-        background-color: whitesmoke;
-        padding: 0 20px 0 0;
+        z-index: 1000;
+        background-color: lightgrey;
+        overflow: hidden;
         text-align: center;
-      }
-      .navbar li {
-        display: inline-block;
-        margin: 0;
-      }
-      .navbar ul {
-        display: inline;
         padding: 0;
         margin: 0;
       }
+      .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar li {
+        float: left;
+      }
+      .navbar #title {
+        display: inline-block;
+        margin-top: 8px;
+      }
       .navbar a {
         display: block;
-        padding: 10px 5px;
-        font-size: 24px;
-        text-decoration: none;
         color: black;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-size: 14px;
         font-family: Arial, Helvetica, sans-serif;
       }
       .navbar a:hover {
-        background-color: darkgray;
-      }
-      #rightNav {
-        float: right;
-      }
-      #leftNav {
-        float: left;
-      }
-      #logo {
-        vertical-align: bottom;
-        padding: 10px;
-        height: 28px;
-      }
-      #icon {
-        display: none;
-      }
-      .bar {
-        width: 50px;
         background-color: black;
-        height: 6px;
-        margin: 8px 0;
+        color: white;
+      }
+      .navbar a:hover .bar {
+        background-color: white;
       }
       .navbar .img {
-        height: 24px;
+        height: 14px;
         padding: 0 8px;
         vertical-align: middle;
       }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: whitesmoke;
-        min-width: 130px;
-        width: 130px;
-        z-index: 1;
+      img#logo {
+        height: 14px;
+        padding: 10px;
+        float: left;
       }
-      .dropdown:hover .dropdown-content {
-        display: block;
+      #icon {
+        display: none;
+        width: 20px;
+        border: 1px solid black;
+        padding: 3px 6px;
+        margin: 2px;
+        border-radius: 5px;
+      }
+      .bar {
+        width: 20px;
+        background-color: black;
+        height: 2px;
+        margin: 4px 0;
       }
       @media only screen and (max-width: 600px) {
-        .navbar li,
-        .navbar ul {
-          display: block;
+        .navbar #title {
+          margin-right: 45px;
         }
-        .navbar a,
-        .dropdown-content {
-          width: 100vw;
+        .navbar a {
           display: none;
-        }
-        .navbar nav {
-          width: 100%;
-          padding: 0;
-        }
-        #logo {
-          height: 50px;
         }
         #icon {
           display: block;
           position: absolute;
-          left: 0px;
-          top: 0px;
-          width: 52px;
-          pointer-events: all;
+          right: 0;
+          top: 0;
         }
-
-        #rightNav,
-        #leftNav {
-          float: none;
+        #icon:active {
+          background-color: white;
         }
-        .navbar.responsive a:not(.icon) {
+        #icon:active .bar {
+          background-color: black;
+        }
+        img#logo {
+          vertical-align: middle;
+        }
+        .navbar.responsive a {
+          width: calc(100vw - 32px);
           display: block;
         }
       }
     </style>
   </head>
   <body>
-    <nav id="navbar" class="navbar">
-      <ul id="leftNav">
-        <img src="./images/news.png" alt="A Newspaper Logo" id="logo" />
+    <div class="navbar" id="navbar">
+      <img id="logo" src="./images/news.png" />
+      <ul>
         <li><a href="">Home</a></li>
         <li><a href="">About</a></li>
         <li><a href="">Contact</a></li>
-        <li class="dropdown">
-          <a href="">Dropdown</a>
-          <div class="dropdown-content">
-            <a href="">Dropdown Content</a>
-            <a href="">Dropdown Content 2</a>
-          </div>
-        </li>
       </ul>
-      <ul id="rightNav">
+      <div id="title" href="#">My App</div>
+      <ul style="float: right;">
         <li>
           <a href=""
             ><img class="img" src="./images/instagram.png" alt="Instagram"
@@ -136,36 +121,33 @@
         </li>
         <li>
           <a href=""
-            ><img class="img" src="./images/twitter.png" alt="Twitter"
+            ><img class="img" src="./images/twitter_blue.png" alt="Twitter"
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img class="img" src="./images/facebook.png" alt="Facebook"
           /></a>
         </li>
       </ul>
-      <a
-        href="javascript:void(0);"
-        id="icon"
-        class="icon"
-        onclick="toggleNav()"
-      >
+      <a href="javascript:void(0);" id="icon" onclick="toggleNav()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </a>
-    </nav>
+    </div>
+
     <script>
+      var x = document.getElementById('navbar');
       function toggleNav() {
-        var x = document.getElementById('navbar');
-        if (x.className === 'navbar') {
+        if (x.className == 'navbar') {
           x.className += ' responsive';
         } else {
           x.className = 'navbar';
         }
       }
       document.addEventListener('click', function (e) {
-        var x = document.getElementById('navbar');
-        if (
-          !e.target.classList.contains('bar') &&
-          !e.target.classList.contains('icon')
-        ) {
+        if (!(e.target.id == 'icon') && !e.target.classList.contains('bar')) {
           x.className = 'navbar';
         }
       });

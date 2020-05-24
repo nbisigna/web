@@ -1,17 +1,13 @@
+var x = document.getElementById('navbar');
 function toggleNav() {
-  var x = document.getElementById('navbar');
-  if (x.className === 'navbar') {
+  if (x.className == 'navbar') {
     x.className += ' responsive';
   } else {
     x.className = 'navbar';
   }
 }
 document.addEventListener('click', function (e) {
-  var x = document.getElementById('navbar');
-  if (
-    !e.target.classList.contains('bar') &&
-    !e.target.classList.contains('icon')
-  ) {
+  if (!e.target.id == 'icon' && !e.target.classList.contains('bar')) {
     x.className = 'navbar';
   }
 });
